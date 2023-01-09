@@ -1,23 +1,23 @@
-const domBookList = document.querySelector('#book-list');
 
-const inputTitle = document.querySelector('#input-title');
-const inputAuthor = document.querySelector('#input-author');
-const buttonAdd = document.querySelector('#button-add');
+    const domBookList = document.querySelector('#book-list');
+    
+    const inputTitle = document.querySelector('#input-title');
+    const inputAuthor = document.querySelector('#input-author');
+    const buttonAdd = document.querySelector('#button-add');
+    let bookList = [
+        
+    ];
+    
+    console.log(bookList)
+    const stringBookList = localStorage.getItem('bookList');
+    if(stringBookList){
+        bookList = JSON.parse(stringBookList);
+        console.log(bookList)
+    } 
+    console.log(bookList)
+    drawBooks();
+    console.log(bookList)
 
-const bookList = [
-    {
-        title: 'Lorem ipsum',
-        author: 'Testeroo Testyy',
-    },
-    {
-        title: 'Second book',
-        author: 'Testeroo Testyy',
-    },
-    {
-        title: 'Book 3',
-        author: 'Testeroo Testyy',
-    },
-];
 
 function addBook (title, author) {
     if(title && author){
@@ -33,7 +33,7 @@ function removeBook (index) {
 
 function drawBooks() {
     let innerHtml = '';
-
+    
     bookList.forEach((book, index) => {
         innerHtml += `
         <li>
@@ -43,13 +43,21 @@ function drawBooks() {
         </li>
         `;
     });
-
+    
     domBookList.innerHTML = innerHtml;
+
+    bookList.forEach((book, index) =>{
+        const removeBtn = document.querySelector(`#remove_btn_${index}`)
+        removeBtn.addEventListener('click', (e) =>{
+            removeBook(index)
+        })
+    })
+
+    localStorage.setItem('bookList', JSON.stringify(bookList))
+    console.log(JSON.stringify(bookList))
+
 }
 
-addEventListener("load", () => {
-    drawBooks();
-});
 
 buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
@@ -57,3 +65,4 @@ buttonAdd.addEventListener('click', (event) => {
     inputTitle.value = '';
     inputAuthor.value = '';
 })
+
