@@ -16,7 +16,6 @@ if (stringBookList) {
 
 function removeBook(index) {
   bookList.splice(index, 1);
-//   drawBooks();
 }
 
 function drawBooks() {
