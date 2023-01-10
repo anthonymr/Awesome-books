@@ -1,4 +1,4 @@
-const domBookList = document.querySelector('#book-list');
+/*const domBookList = document.querySelector('#book-list');
 const inputTitle = document.querySelector('#input-title');
 const inputAuthor = document.querySelector('#input-author');
 const buttonAdd = document.querySelector('#button-add');
@@ -57,4 +57,14 @@ buttonAdd.addEventListener('click', (event) => {
 
   inputTitle.value = '';
   inputAuthor.value = '';
-});
+});*/
+
+import BookList from "./bookList.js";
+
+const myList = new BookList();
+
+myList.addBook('1', 'Nobody');
+myList.addBook('2', 'Nobody');
+myList.addBook('3', 'Nobody');
+
+console.log(myList.bookList);
