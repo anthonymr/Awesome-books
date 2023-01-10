@@ -40,8 +40,10 @@ export default class BookList {
       const newLi = document.createElement('li');
       newLi.innerHTML = `
             <li>
-              <h3>${book.title}</h3>
-              ${book.author}
+              <span>
+                "${book.title}"
+                <span>by ${book.author}</span>
+              </span>
               <button id="remove_btn_${index}">Remove</button>
             </li>
             `;
