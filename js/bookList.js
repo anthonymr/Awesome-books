@@ -15,6 +15,8 @@ export default class BookList {
       this.inputTitle.value = '';
       this.inputAuthor.value = '';
     });
+
+    this.#loadLocalStorage();
     this.drawBooks();
   }
 
@@ -22,11 +24,13 @@ export default class BookList {
     const myBook = new Book(title, author);
     this.bookList.unshift(myBook);
     this.drawBooks();
+    this.#saveToLocalStorage();
   }
 
   removeBook(index) {
     this.bookList.splice(index, 1);
     this.drawBooks();
+    this.#saveToLocalStorage();
   }
 
   drawBooks() {
@@ -49,5 +53,20 @@ export default class BookList {
         this.drawBooks();
       });
     });
+  }
+
+  #saveToLocalStorage() {
+    localStorage.setItem('bookList', JSON.stringify(this.bookList));
+  }
+
+  #loadLocalStorage() {
+    const stringBookList = localStorage.getItem('bookList');
+
+    if (stringBookList) {
+      const parsedBookList = JSON.parse(stringBookList);
+      if (Array.isArray(parsedBookList)) {
+        this.bookList = parsedBookList;
+      }
+    }
   }
 }
