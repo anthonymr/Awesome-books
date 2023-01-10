@@ -19,21 +19,19 @@ function removeBook(index) {
 }
 
 function drawBooks() {
-  let innerHtml = '';
+  domBookList.innerHTML = '';
 
   bookList.forEach((book, index) => {
-    innerHtml += `
+    const newLi = document.createElement('li');
+    newLi.innerHTML = `
     <li>
       <h3>${book.title}</h3>
       ${book.author}
       <button id="remove_btn_${index}">Remove</button>
     </li>
     `;
-  });
 
-  domBookList.innerHTML = innerHtml;
-
-  bookList.forEach((book, index) => {
+    domBookList.appendChild(newLi);
     const removeBtn = document.querySelector(`#remove_btn_${index}`);
     removeBtn.addEventListener('click', () => {
       removeBook(index);
