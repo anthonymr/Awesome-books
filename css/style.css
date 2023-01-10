@@ -41,7 +41,7 @@ button {
   padding: 5px 10px;
   border-radius: 3px;
   background-color: white;
-  box-shadow: black 5px 5px 0px -3px;
+  box-shadow: black 5px 5px 0 -3px;
 }
 
 form button {
