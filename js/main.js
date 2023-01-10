@@ -19,11 +19,10 @@ function removeBook(index) {
 }
 
 function drawBooks() {
-
   domBookList.innerHTML = '';
 
   bookList.forEach((book, index) => {
-    const newLi = document.createElement("li");
+    const newLi = document.createElement('li');
     newLi.innerHTML = `
     <li>
       <h3>${book.title}</h3>
@@ -38,9 +37,8 @@ function drawBooks() {
       removeBook(index);
       drawBooks();
     });
-
   });
-  
+
   localStorage.setItem('bookList', JSON.stringify(bookList));
 }
 
