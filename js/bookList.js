@@ -11,7 +11,7 @@ export default class BookList {
     this.buttonAdd.addEventListener('click', (event) => {
       event.preventDefault();
       this.addBook(this.inputTitle.value, this.inputAuthor.value);
-      
+
       this.inputTitle.value = '';
       this.inputAuthor.value = '';
     });
