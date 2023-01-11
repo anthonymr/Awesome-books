@@ -1,6 +1,5 @@
 export default class WebStatus {
     constructor(){
-        console.log('test');
         WebStatus.getDomSections();
         WebStatus.getLinkElements();
         WebStatus.bindLinksToSections();
@@ -14,10 +13,10 @@ export default class WebStatus {
         'contact-section',
     ]
 
+    static defaultSection = 'book-list-section'
+
     static domElements = []
     static linkElements = []
-
-    static defaultSection = 'book-list-section'
 
     static getDomSections(){
         WebStatus.webSections.forEach((section) => {
