@@ -19,6 +19,59 @@ body {
   font-family: 'Itim', cursive;
 }
 
+/* ---------------NavBar Section Css Starts--------------------------------- */
+
+#navbar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border: 2px solid #000;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.nav__title {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.3rem;
+  list-style: none;
+}
+
+.list {
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.addNew,
+.contact {
+  padding-left: 15px;
+  cursor: pointer;
+  border-left: 2px solid #000;
+  transition: 0.3s all ease;
+}
+
+.list:hover,
+.addNew:hover,
+.contact:hover {
+  color: cornflowerblue;
+}
+
+#date {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+/* ---------------NavBar Section Css Ends--------------------------------- */
+
 form {
   display: flex;
   flex-direction: column;
@@ -56,7 +109,7 @@ h1 {
   margin: 10px 0;
 }
 
-ul {
+#book-list {
   max-height: calc(100% - 288px);
   width: calc(100% - 50px);
   min-height: 100px;
@@ -65,14 +118,14 @@ ul {
   overflow-y: auto;
 }
 
-li {
+#book-list li {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 5px;
 }
 
-ul > li:nth-child(odd) {
+#book-list > li:nth-child(odd) {
   background-color: rgb(217, 217, 217);
 }
 
