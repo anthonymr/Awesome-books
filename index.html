@@ -13,22 +13,31 @@
     <nav id="navbar">
         <h3 class="nav__title">Awesome Books</h3>
         <ul class="nav__list">
-            <li class="list">List</li>
-            <li class="addNew">Add New</li>
-            <li class="contact">Contact</li>
+            <li class="list" id="book-list-section-link">List</li>
+            <li class="addNew" id="add-book-section-link">Add New</li>
+            <li class="contact" id="contact-section-link">Contact</li>
         </ul>
     </nav>
     <div id="date"></div>
     <!-- Navbar section ends here -->
-    <h1>Awesome books</h1>
-    <ul id="book-list">
-    </ul>
-    <form>
-        <div class="separator"></div>
-        <h2>Add a new book</h2>
-        <input type="text" placeholder="Title" name="Title" id="input-title">
-        <input type="text" placeholder="Author" name="Author" id="input-author">
-        <button id="button-add">Add</button>
-    </form>
+    <section id="book-list-section" class="hidden">
+        <h1>Awesome books</h1>
+        <ul id="book-list">
+        </ul>
+    </section>
+    <section id="add-book-section" class="hidden">
+        <form>
+            <h2>Add a new book</h2>
+            <input type="text" placeholder="Title" name="Title" id="input-title">
+            <input type="text" placeholder="Author" name="Author" id="input-author">
+            <button id="button-add">Add</button>
+        </form>
+    </section>
+    <section id="contact-section" class="hidden">
+        contact info
+    </section>
+    <section id="contact-section-2" class="hidden">
+        contact info 2
+    </section>
 </body>
 </html>

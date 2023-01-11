@@ -1,4 +1,5 @@
 import Book from './book.js';
+import WebStatus from './webStatus.js';
 
 export default class BookList {
   constructor() {
@@ -25,6 +26,7 @@ export default class BookList {
     this.bookList.unshift(myBook);
     this.drawBooks();
     this.#saveToLocalStorage();
+    WebStatus.changeSection('book-list-section');
   }
 
   removeBook(index) {

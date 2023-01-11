@@ -19,6 +19,10 @@ body {
   font-family: 'Itim', cursive;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ---------------NavBar Section Css Starts--------------------------------- */
 
 #navbar {
@@ -101,12 +105,6 @@ form button {
 
 h1 {
   padding: 20px;
-}
-
-.separator {
-  width: 150px;
-  border: 2px solid black;
-  margin: 10px 0;
 }
 
 #book-list {
