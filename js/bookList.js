@@ -1,4 +1,5 @@
 import Book from './book.js';
+import WebStatus from './webStatus.js';
 
 export default class BookList {
   constructor() {
@@ -21,10 +22,17 @@ export default class BookList {
   }
 
   addBook(title, author) {
+    const error = document.getElementById('errorMsg');
+    if (!title || !author) {
+      error.classList.remove('hidden');
+      return;
+    }
+    error.classList.add('hidden');
     const myBook = new Book(title, author);
     this.bookList.unshift(myBook);
     this.drawBooks();
     this.#saveToLocalStorage();
+    WebStatus.changeSection('book-list-section');
   }
 
   removeBook(index) {
