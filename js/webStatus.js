@@ -1,5 +1,7 @@
 export default class WebStatus {
-  constructor() {
+  constructor(config) {
+    WebStatus.webSections = config.webSections;
+    WebStatus.defaultSection = WebStatus.webSections[config.defaultSection]
     WebStatus.getDomSections();
     WebStatus.getLinkElements();
     WebStatus.bindLinksToSections();
@@ -7,13 +9,9 @@ export default class WebStatus {
     WebStatus.changeSection(WebStatus.defaultSection);
   }
 
-    static webSections = [
-      'book-list-section',
-      'add-book-section',
-      'contact-section',
-    ]
+    static webSections = []
 
-    static defaultSection = 'book-list-section'
+    static defaultSection = null
 
     static domElements = []
 
